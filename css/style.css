@@ -248,10 +248,6 @@ section:nth-child(4) section * {
   z-index: 2;
 }
 
-section:nth-child(4) section > *:not(::before) {
-  z-index: 10;
-}
-
 section:nth-child(4) section::before {
   content: "";
   position: absolute;
