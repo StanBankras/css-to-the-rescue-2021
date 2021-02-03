@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+h2 ~ p {
+  margin-bottom: 1.5rem;
+}
+
+p {
+  max-width: 40rem;
+}
+
+p span {
+  color: rgb(44, 128, 253);
+  font-weight: bold;
+}
+
+header {
+  background-color: rgb(241, 241, 241);
+  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+}
+
+header > div, main > article {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+main > article > section {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+header > div p {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+}
+
+header > div p::before {
+  content:'';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid black;
+  left: 0;
+  transform: translate(-1.5rem, -50%);
+  top: 50%;
+}
+
+header > div p::after {
+  content:'';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid black;
+  right: 0;
+  transform: translate(1.5rem, -50%);
+  top: 50%;
+}
+
+/*
+*
+*  img tooltip
+*
+*/
+
+section:nth-child(1) img {
+  width: 200px;
+}
+
+section:nth-child(1) figure {
+  position: relative;
+  display: inline-block;
+}
+
+section:nth-child(1) figure::after, figure::before {
+  transition: .4s ease-in;
+  opacity: 0;
+  position: absolute;
+}
+
+section:nth-child(1) figure:hover::after, figure:hover::before {
+  opacity: 1;
+}
+
+section:nth-child(1) figure::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(calc(100% + 2rem), -50%);
+  font-weight: normal;
+  font-size: 1rem;
+  color: white;
+  padding: 2rem;
+  background-color: rgb(37, 37, 37);
+  min-width: 300px;
+}
+
+
+/* CSS tooltip trick: https://stackoverflow.com/a/12610557 */
+section:nth-child(1) figure::before {
+  content:'';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid black;
+  right: 0;
+  transform: translate(1.5rem, -50%);
+  top: 50%;
+}
+
+/*
+*
+*  img tooltip
+*
+*/
+
+/*
+*
+* Sections beschrijven
+*
+*/
+
+section:nth-child(2) section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+section:nth-child(2) section div {
+  padding: 3rem;
+  background-color: rgb(190, 190, 190);
+  border: 1px solid grey;
+}
+
+section:nth-child(2) section div::after {
+  content: '#' attr(id);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+*
+* Sections beschrijven
+*
+*/
+
+/*
+*
+* Afbeelding overlays
+*
+*/
+
+section:nth-child(3) img {
+  max-width: 100%;
+  width: 500px;
+}
+
+section:nth-child(3) figure {
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+}
+
+section:nth-child(3) figure::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgb(52, 139, 238);
+  mix-blend-mode: multiply;
+  opacity: 1;
+}
+
+section:nth-child(3) figure::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  background-color: rgb(52, 139, 238);
+  mix-blend-mode: color-dodge;
+  opacity: 1;
+}
+
+/*
+*
+* Afbeelding overlays
+*
+*/
+

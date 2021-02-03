@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>CSS to the rescue kennismakingopdracht</title>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Thema: selectoren</h1>
+      <p>Mijn focus: before & after</p>
+    </div>
+  </header>
+  <main>
+    <article>
+      <section>
+        <h2>Tooltips</h2>
+        <p>
+          Met <span>::before</span> en <span>::after</span> kun je makkelijk
+          een tooltip maken als je ergens overheen hovert.
+        </p>
+        <figure 
+          data-tooltip="Het doel is om te zorgen dat transacties eerlijk en veilig gemaakt kunnen worden zonder een centrale partij die het gezag heeft: decentrale netwerken.">
+          <img src="./img/btc.svg"/>
+        </figure>
+      </section>
+      <section>
+        <h2>Sections beschrijven in voorbeelden</h2>
+        <p>
+          Content in de <span>::before</span> en <span>::after</span> kan dynamisch zijn, gebaseerd op
+          attributen zoals het ID. De text in deze velden zijn allemaal resultaat hiervan.
+        </p>
+        <section>
+          <div id="left-top"></div>
+          <div id="right-top"></div>
+          <div id="left-bottom"></div>
+          <div id="right-bottom"></div>
+        </section>
+      </section>
+      <section>
+        <h2>Overlays over afbeeldingen (of wat je wilt)</h2>
+        <p>
+          Je kunt door content <span>absolute</span> over een afbeelding te zetten met ::before of ::after effecten toevoegen.
+          In dit voorbeeld met een before & after twee verschillende effecten op 1 afbeelding. <br>
+          Belangrijke notitie: <strong>::before & ::after werken niet op een img tag.</strong>
+        </p>
+        <figure>
+          <img src="./img/binance.png" alt="">
+        </figure>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
