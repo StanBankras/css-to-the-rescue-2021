@@ -215,3 +215,44 @@ section:nth-child(3) figure::after {
 *
 */
 
+/*
+*
+* Custom borders
+*
+*/
+
+section:nth-child(4) section {
+  padding: 2rem;
+  background-image: url('../img/cryptos.png');
+  background-size: cover;
+  position: relative;
+  max-width: 100%;
+  width: 500px;
+}
+
+section:nth-child(4) section * {
+  position: relative;
+  z-index: 2;
+}
+
+section:nth-child(4) section > *:not(::before) {
+  z-index: 10;
+}
+
+section:nth-child(4) section::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  background-color: white;
+  z-index: 1;
+}
+
+/*
+*
+* Custom borders
+*
+*/
+
