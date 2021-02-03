@@ -50,7 +50,7 @@ main > article > section {
 }
 
 main > article > section > div:last-child pre {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 header > div p {
