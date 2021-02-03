@@ -16,74 +16,234 @@
   <main>
     <article>
       <section>
-        <h2>Tooltips</h2>
-        <p>
-          Met <span>::before</span> en <span>::after</span> kun je makkelijk
-          een tooltip maken als je ergens overheen hovert.
-        </p>
-        <figure 
-          data-tooltip="Het doel is om te zorgen dat transacties eerlijk en veilig gemaakt kunnen worden zonder een centrale partij die het gezag heeft: decentrale netwerken.">
-          <img src="./img/btc.svg"/>
-        </figure>
+        <div>
+          <h2>Tooltips</h2>
+          <p>
+            Met <span>::before</span> en <span>::after</span> kun je makkelijk
+            een tooltip maken als je ergens overheen hovert.
+          </p>
+          <figure 
+            data-tooltip="Het doel is om te zorgen dat transacties eerlijk en veilig gemaakt kunnen worden zonder een centrale partij die het gezag heeft: decentrale netwerken.">
+            <img src="./img/btc.svg"/>
+          </figure>
+        </div>
+        <div>
+          <pre>
+            section:nth-child(1) figure::after, figure::before {
+              transition: .4s ease-in;
+              opacity: 0;
+              position: absolute;
+            }
+            
+            section:nth-child(1) figure:hover::after, figure:hover::before {
+              opacity: 1;
+            }
+            
+            section:nth-child(1) figure::after {
+              content: attr(data-tooltip);
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translate(calc(100% + 2rem), -50%);
+              font-weight: normal;
+              font-size: 1rem;
+              color: white;
+              padding: 2rem;
+              background-color: rgb(37, 37, 37);
+              min-width: 300px;
+            }
+            
+            
+            /* CSS tooltip trick: https://stackoverflow.com/a/12610557 */
+            section:nth-child(1) figure::before {
+              content:'';
+              display: block;
+              width: 0;
+              height: 0;
+              position: absolute;
+              border-top: 8px solid transparent;
+              border-bottom: 8px solid transparent;
+              border-right: 8px solid black;
+              right: 0;
+              transform: translate(1.5rem, -50%);
+              top: 50%;
+            }
+          </pre>
+        </div>
       </section>
 
       <section>
-        <h2>Sections beschrijven in voorbeelden</h2>
-        <p>
-          Content in de <span>::before</span> en <span>::after</span> kan dynamisch zijn, gebaseerd op
-          attributen zoals het ID. De text in deze velden zijn allemaal resultaat hiervan.
-        </p>
-        <section>
-          <div id="left-top"></div>
-          <div id="right-top"></div>
-          <div id="left-bottom"></div>
-          <div id="right-bottom"></div>
-        </section>
+        <div>
+          <h2>Sections beschrijven in voorbeelden</h2>
+          <p>
+            Content in de <span>::before</span> en <span>::after</span> kan dynamisch zijn, gebaseerd op
+            attributen zoals het ID. De text in deze velden zijn allemaal resultaat hiervan.
+          </p>
+          <section>
+            <div id="left-top"></div>
+            <div id="right-top"></div>
+            <div id="left-bottom"></div>
+            <div id="right-bottom"></div>
+          </section>
+        </div>
+        <div>
+          <pre>
+            section:nth-child(2) section div {
+              padding: 3rem;
+              background-color: rgb(190, 190, 190);
+              border: 1px solid grey;
+            }
+            
+            section:nth-child(2) section div::after {
+              content: '#' attr(id);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          </pre>
+        </div>
       </section>
 
       <section>
-        <h2>Overlays over afbeeldingen (of wat je wilt)</h2>
-        <p>
-          Je kunt door content <span>absolute</span> over een afbeelding te zetten met ::before of ::after effecten toevoegen.
-          In dit voorbeeld met een before & after twee verschillende effecten op 1 afbeelding. <br>
-          Belangrijke notitie: <strong>::before & ::after werken niet op een img tag.</strong>
-        </p>
-        <figure>
-          <img src="./img/binance.png" alt="">
-        </figure>
+        <div>
+          <h2>Overlays over afbeeldingen (of wat je wilt)</h2>
+          <p>
+            Je kunt door content <span>absolute</span> over een afbeelding te zetten met ::before of ::after effecten toevoegen.
+            In dit voorbeeld met een before & after twee verschillende effecten op 1 afbeelding. <br>
+            Belangrijke notitie: <strong>::before & ::after werken niet op een img tag.</strong>
+          </p>
+          <figure>
+            <img src="./img/binance.png" alt="">
+          </figure>
+        </div>
+        <div>
+          <pre>
+            section:nth-child(3) figure::before {
+              content: "";
+              position: absolute;
+              width: 50%;
+              left: 0;
+              top: 0;
+              height: 100%;
+              background-color: rgb(52, 139, 238);
+              mix-blend-mode: multiply;
+              opacity: 1;
+            }
+            
+            section:nth-child(3) figure::after {
+              content: "";
+              position: absolute;
+              width: 50%;
+              left: 50%;
+              top: 0;
+              height: 100%;
+              background-color: rgb(52, 139, 238);
+              mix-blend-mode: color-dodge;
+              opacity: 1;
+            }
+          </pre>
+        </div>
       </section>
 
       <section>
-        <h2>Aparte borders</h2>
-        <p>
-          Je kunt wat je ook maar wilt als border gebruiken door <span>::before</span>. Je kunt een afbeelding als achteground gebruiken
-          en een wit vlak met ::before daar overheen plaatsen.
-        </p>
-        <section>
-          <h3>Wist je dat?</h3>
-          <p>Er staan op dit moment 8385 cryptocurrencies geregistreerd, die 33053 markten vormen
-            en bij elkaar een totale waarde hebben van $1.087.040.512.256.</p>
-        </section>
+        <div>
+          <h2>Aparte borders</h2>
+          <p>
+            Je kunt wat je ook maar wilt als border gebruiken door <span>::before</span>. Je kunt een afbeelding als achteground gebruiken
+            en een wit vlak met ::before daar overheen plaatsen.
+          </p>
+          <section>
+            <h3>Wist je dat?</h3>
+            <p>Er staan op dit moment 8385 cryptocurrencies geregistreerd, die 33053 markten vormen
+              en bij elkaar een totale waarde hebben van $1.087.040.512.256.</p>
+          </section>
+        </div>
+        <div>
+          <pre>
+            section:nth-child(4) section {
+              padding: 2rem;
+              background-image: url('../img/cryptos.png');
+              background-size: cover;
+              position: relative;
+              max-width: 100%;
+              width: 500px;
+            }
+            
+            section:nth-child(4) section * {
+              position: relative;
+              z-index: 2;
+            }
+            
+            section:nth-child(4) section > *:not(::before) {
+              z-index: 10;
+            }
+            
+            section:nth-child(4) section::before {
+              content: "";
+              position: absolute;
+              top: 20px;
+              left: 20px;
+              width: calc(100% - 40px);
+              height: calc(100% - 40px);
+              background-color: white;
+              z-index: 1;
+            }
+          </pre>
+        </div>
       </section>
 
       <section>
-        <h2>Togglen dmv interactie</h2>
-        <p>
-          Met de <span>:valid</span> en <span>:invalid</span> selectoren
-          kun je CSS stylen als een form goed of verkeerd is ingevuld. Hier
-          een voorbeeld met deze selectoren in combinatie met befre & after.
-        </p>
-        <form>
-          <fieldset>
-            <legend>Goed of fout?</legend>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-            <label for="checkbox">Checkbox</label>
-            <input type="checkbox" name="checkbox" id="checkbox" required>
-          </fieldset>
-        </form>
+        <div>
+          <h2>Togglen dmv interactie</h2>
+          <p>
+            Met de <span>:valid</span> en <span>:invalid</span> selectoren
+            kun je CSS stylen als een form goed of verkeerd is ingevuld. Hier
+            een voorbeeld met deze selectoren in combinatie met befre & after.
+          </p>
+          <form>
+            <fieldset>
+              <legend>Goed of fout?</legend>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" required>
+              <label for="checkbox">Checkbox</label>
+              <input type="checkbox" name="checkbox" id="checkbox" required>
+            </fieldset>
+          </form>
+        </div>
+        <div>
+          <pre>
+            section:nth-child(5) form fieldset::before {
+              content: "";
+              background-image: url('../img/wrong.png');
+              background-size: cover;
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: -40px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            
+            section:nth-child(5) form fieldset:valid::before {
+              background-image: url('../img/check.png');
+            }
+            
+            section:nth-child(5) form fieldset:valid {
+              border-color: lightgreen;
+            }
+            
+            section:nth-child(5) form fieldset:invalid {
+              border-color: red;
+            }
+          </pre>
+        </div>
       </section>
     </article>
   </main>
+  <footer>
+    <div>
+      Door Stan Bankras
+    </div>
+  </footer>
 </body>
 </html>
