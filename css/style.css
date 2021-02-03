@@ -256,3 +256,49 @@ section:nth-child(4) section::before {
 *
 */
 
+/*
+*
+* Form validation
+*
+*/
+
+section:nth-child(5) form {
+  max-width: 100%; 
+  width: 500px;
+}
+
+section:nth-child(5) form fieldset {
+  padding: 1rem;
+  position: relative;
+}
+
+section:nth-child(5) form fieldset::before {
+  content: "";
+  background-image: url('../img/wrong.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+section:nth-child(5) form fieldset:valid::before {
+  background-image: url('../img/check.png');
+}
+
+section:nth-child(5) form fieldset:valid {
+  border-color: lightgreen;
+}
+
+section:nth-child(5) form fieldset:invalid {
+  border-color: red;
+}
+
+/*
+*
+* Form validation
+*
+*/
+
