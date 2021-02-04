@@ -40,6 +40,30 @@ header > div, main > article, footer > div {
   padding: 0 2rem;
 }
 
+header nav {
+  background-color: rgb(82, 82, 82);
+  margin-bottom: 2rem;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+header nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: .3s;
+}
+
+header nav a.active, header nav a:hover {
+  background-color: grey;
+}
+
 main > article > section {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
