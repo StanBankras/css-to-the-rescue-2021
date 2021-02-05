@@ -1,0 +1,19 @@
+/* Disable most default styling */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+/*
+*
+*   Parallax scrolling in CSS: https://www.digitalocean.com/community/tutorials/css-pure-css-parallax
+*
+*   Interesting read about non-rectangular layouts: https://www.sarasoueidan.com/blog/css-shapes/
+*
+*   More about layouts that include shapes: https://www.smashingmagazine.com/2019/04/art-direction-for-the-web-using-css-shapes/
+* 
+*   How to make shapes in CSS: https://itnext.io/how-to-create-beautiful-shapes-in-css-a-teardown-of-3-shapes-purely-made-in-css-c3ac7cb99c4
+*
+*/
