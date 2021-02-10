@@ -20,6 +20,8 @@ Ik kies voor de opdracht van **het restaurant menu**, omdat ik tijdens de introd
 
 ## Mislukte experimenten
 * Header goed centreren
+
+![Header centreren](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/header-center.png?raw=true)
 ```css
 body > header {
   display: flex;
