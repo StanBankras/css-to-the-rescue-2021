@@ -97,7 +97,7 @@ main > section header:hover {
 }
 
 main > section article {
-  width: 100%;
+  width: 50%;
   height: 200px;
   background-color: green;
   backface-visibility: hidden;
@@ -105,10 +105,15 @@ main > section article {
   transition: .5s;
   padding: 2rem;
   position: absolute;
-  top: calc((var(--nth-child) - 1) * 200px);
+  top: calc((var(--nth-child) / 2) * 200px);
   opacity: 0;
   z-index: 10;
   left: 0;
+}
+
+main > section article:nth-child(2n + 1) {
+  left: 50%;
+  top: calc((var(--nth-child) / 2) * 200px - 100px);
 }
 
 input[type=radio] {
@@ -123,6 +128,12 @@ main > input:checked + section label ~ article {
   backface-visibility: hidden;
   transform: rotateY(0);
   transition-delay: calc((var(--nth-child)) * .1s);
+}
+
+/* https://stackoverflow.com/questions/28110057/using-css-nth-child-to-select-irregular-pattern-in-sequence */
+main > input:checked + section label ~ article:nth-child(4n + 1),
+main > input:checked + section label ~ article:nth-child(4n + 2) {
+  background-color: rgb(24, 165, 24);
 }
 
 main > input:checked + section label header {
