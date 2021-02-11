@@ -69,3 +69,13 @@ body > header h1 span:last-child {
 ```
 
 Ik wil graag de tekst 'appetizing since 1924' gecentreerd hebben met het & teken, maar dit lukt me nog niet.
+
+## Accessibility sessie
+* Contrast is belangrijk (hoog contrast) ([contrast checker](https://contrast-ratio.com/))
+* Focus states op elementen zijn belangrijk
+* Semantische HTML
+* Reduced motion (voor animaties) - prefers-reduced-motion
+* Screenreader: Header elementen, links, 
+  * Display none niet leesbaar
+  * Skip to content om de nav te omzijlen
+  * Area attributen worden voorgelezen
