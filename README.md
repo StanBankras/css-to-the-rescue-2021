@@ -96,3 +96,12 @@ Ik wil graag de tekst 'appetizing since 1924' gecentreerd hebben met het & teken
 * (3D) transforms sessie gevolgd, aan de hand hiervan een idee gekregen voor een concept.
 Begin van dit concept is hieronder te zien. Het idee is om per categorie op het menu een uitvouwbare kaart te maken:
 ![Week2 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/concept-week-1.gif?raw=true)
+* De volgende dag had ik de accessibility sessie van Vasilis. Hierbij zag ik dat het met een simpele hover niet goed zou gaan voor screenreaders. Hier heb ik echt veel geleerd over CSS selectoren als '+' en '~' omdat ik met inputs ben gaan werken.
+
+Hierdoor zijn de categorieën nu klikbaar geworden met alleen CSS en HTML, iets wat ik nooit voor mogelijk had gehouden:
+![Week2 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/concept-week-2.gif?raw=true)
+
+**Plannen voor volgende week**
+* Ik wil graag de kleuren aanpassen zodat ik aan de 'twee kleuren' eis voldoe
+* Ik wil het menu responsive gaan maken
+* Ik wil met overige tijd vormpjes / animaties maken per menu om het op te vrolijken
