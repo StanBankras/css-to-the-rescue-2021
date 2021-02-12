@@ -10,9 +10,16 @@ Ik kies voor de opdracht van **het restaurant menu**, omdat ik tijdens de introd
 * Responsive zonder mediaqueries
 * Twee kleuren
 
+**Update 10-2-2021**
+* Ik zie af van de 'responsive zonder mediaqueries' eis, en stap over op sterke accessibility
+
 ## CSS technieken die ik het eerste ga gebruiken/zoeken
 * Ik wil iets met een parallax effect maken voor diepte
 * Ik ga waarschijnlijk shapes snel nodig hebben
+
+**Update 10-2-2021:**
+* Ik ga verder werken met (3D) transforms en positioning
+* Ik wil nog steeds iets met shapes doen om gerechten unieke te vormgeven
 
 ## Grootste uitdagingen
 * Altijd in het achterhoofd de responsiveness zonder mediaqueries
@@ -79,3 +86,13 @@ Ik wil graag de tekst 'appetizing since 1924' gecentreerd hebben met het & teken
   * Display none niet leesbaar
   * Skip to content om de nav te omzijlen
   * Area attributen worden voorgelezen
+
+## Week 1
+* Keuze over de eisen gemaakt
+* Keuze voor restaurant menu kaart gemaakt
+* Eerste idee bedacht aan de hand van de presentatie (poster met parallax effect)
+
+## Week 2
+* (3D) transforms sessie gevolgd, aan de hand hiervan een idee gekregen voor een concept.
+Begin van dit concept is hieronder te zien. Het idee is om per categorie op het menu een uitvouwbare kaart te maken:
+![Week2 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/concept-week-1.gif?raw=true)
