@@ -99,6 +99,7 @@ Begin van dit concept is hieronder te zien. Het idee is om per categorie op het 
 * De volgende dag had ik de accessibility sessie van Vasilis. Hierbij zag ik dat het met een simpele hover niet goed zou gaan voor screenreaders. Hier heb ik echt veel geleerd over CSS selectoren als '+' en '~' omdat ik met inputs ben gaan werken.
 
 Hierdoor zijn de categorieën nu klikbaar geworden met alleen CSS en HTML, iets wat ik nooit voor mogelijk had gehouden:
+
 ![Week2 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/concept-week-2.gif?raw=true)
 
 **Plannen voor volgende week**
