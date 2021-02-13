@@ -92,7 +92,7 @@ Ik wil graag de tekst 'appetizing since 1924' gecentreerd hebben met het & teken
 * Keuze voor restaurant menu kaart gemaakt
 * Eerste idee bedacht aan de hand van de presentatie (poster met parallax effect)
 
-![Week1 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/schets.jpg?raw=true)
+![Week1 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/schets.jpeg?raw=true)
 
 ## Week 2
 * (3D) transforms sessie gevolgd, aan de hand hiervan een idee gekregen voor een concept.
