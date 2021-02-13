@@ -136,8 +136,8 @@ main > input:checked + section label ~ article {
 }
 
 /* https://stackoverflow.com/questions/28110057/using-css-nth-child-to-select-irregular-pattern-in-sequence */
-main > input:checked + section label ~ article:nth-child(4n + 1),
-main > input:checked + section label ~ article:nth-child(4n + 2) {
+main > input:checked + section label ~ article:nth-of-type(4n),
+main > input:checked + section label ~ article:nth-of-type(4n + 1) {
   background-color: white;
 }
 

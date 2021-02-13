@@ -92,6 +92,8 @@ Ik wil graag de tekst 'appetizing since 1924' gecentreerd hebben met het & teken
 * Keuze voor restaurant menu kaart gemaakt
 * Eerste idee bedacht aan de hand van de presentatie (poster met parallax effect)
 
+![Week1 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/schets.jpg?raw=true)
+
 ## Week 2
 * (3D) transforms sessie gevolgd, aan de hand hiervan een idee gekregen voor een concept.
 Begin van dit concept is hieronder te zien. Het idee is om per categorie op het menu een uitvouwbare kaart te maken:
@@ -101,6 +103,33 @@ Begin van dit concept is hieronder te zien. Het idee is om per categorie op het 
 Hierdoor zijn de categorieën nu klikbaar geworden met alleen CSS en HTML, iets wat ik nooit voor mogelijk had gehouden:
 
 ![Week2 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/concept-week-2.gif?raw=true)
+
+Dit heb ik werkend gemaakt door gebruik te maken van labels en inputs, de samen één **name** attribuut delen:
+```html
+<input type="radio" name="category" id="noshes">
+  <section>
+    <label for="noshes">
+      <header>
+        <h2>Noshes</h2>
+        <p>small dishes</p>
+      </header>
+    </label>
+    ...
+```
+
+Wanneer je op dit label klikt, wordt de radio button selected, waardoor deze CSS andere articles (items op de menukaart) zichtbaar maakt:
+
+```css
+main > input:checked + section label ~ article {
+  opacity: 1;
+  background-color: rgb(228, 251, 255);
+  backface-visibility: hidden;
+  transform: rotateY(0);
+  transition-delay: calc((var(--nth-child)) * .1s);
+}
+```
+
+De '+' en '~' selector had ik hiervoor nog nooit gebruikt, dus ik vond het wel fascinerend om te zien wat voor mogelijkheden dit opent.
 
 **Plannen voor volgende week**
 * Ik wil graag de kleuren aanpassen zodat ik aan de 'twee kleuren' eis voldoe
