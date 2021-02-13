@@ -1,19 +1,19 @@
 # CSS to the Rescue @cmda-minor-web 2020 - 2021
 
-## Keuze voor de opdracht
+## :green_circle: Keuze voor de opdracht
 Ik kies voor de opdracht van **het restaurant menu**, omdat ik tijdens de introductie van Vasilis zag wat voor interessante dingen je hiervoor zou kunnen doen.
 
-### Contexten
+### :ballot_box_with_check: Contexten
 * Prefers-color-scheme
 
-### Restricties
+### :x: Restricties
 * Responsive zonder mediaqueries
 * Twee kleuren
 
 **Update 10-2-2021**
 * Ik zie af van de 'responsive zonder mediaqueries' eis, en stap over op sterke accessibility
 
-## CSS technieken die ik het eerste ga gebruiken/zoeken
+## :eight_spoked_asterisk: CSS technieken die ik het eerste ga gebruiken/zoeken
 * Ik wil iets met een parallax effect maken voor diepte
 * Ik ga waarschijnlijk shapes snel nodig hebben
 
@@ -21,21 +21,15 @@ Ik kies voor de opdracht van **het restaurant menu**, omdat ik tijdens de introd
 * Ik ga verder werken met (3D) transforms en positioning
 * Ik wil nog steeds iets met shapes doen om gerechten unieke te vormgeven
 
-## Grootste uitdagingen
+## :large_orange_diamond: Grootste uitdagingen
 * Altijd in het achterhoofd de responsiveness zonder mediaqueries
 * Interactie toevoegen zonder Javascript
 
-## Mislukte experimenten
+## :red_square: Mislukte experimenten
 * Header goed centreren
 
 ![Header centreren](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/header-center.png?raw=true)
 ```css
-body > header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 body > header h1 {
   position: relative;
   display: flex;
@@ -56,11 +50,6 @@ body > header h1:before {
   transform: translateX(-50%);
 }
 
-body > header h1 span {
-  display: block;
-  width: 50%;
-}
-
 body > header h1 span:nth-child(2) {
   font-size: 2em;
   position: absolute;
@@ -77,7 +66,7 @@ body > header h1 span:last-child {
 
 Ik wil graag de tekst 'appetizing since 1924' gecentreerd hebben met het & teken, maar dit lukt me nog niet.
 
-## Accessibility sessie
+## :eyes: Accessibility sessie
 * Contrast is belangrijk (hoog contrast) ([contrast checker](https://contrast-ratio.com/))
 * Focus states op elementen zijn belangrijk
 * Semantische HTML
@@ -87,14 +76,14 @@ Ik wil graag de tekst 'appetizing since 1924' gecentreerd hebben met het & teken
   * Skip to content om de nav te omzijlen
   * Area attributen worden voorgelezen
 
-## Week 1
+## :black_medium_square: Week 1
 * Keuze over de eisen gemaakt
 * Keuze voor restaurant menu kaart gemaakt
 * Eerste idee bedacht aan de hand van de presentatie (poster met parallax effect)
 
-![Week1 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/schets.jpeg?raw=true)
+![Week1 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/schets.jpg?raw=true)
 
-## Week 2
+## :black_medium_square: Week 2
 * (3D) transforms sessie gevolgd, aan de hand hiervan een idee gekregen voor een concept.
 Begin van dit concept is hieronder te zien. Het idee is om per categorie op het menu een uitvouwbare kaart te maken:
 ![Week2 concept](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/concept-week-1.gif?raw=true)
