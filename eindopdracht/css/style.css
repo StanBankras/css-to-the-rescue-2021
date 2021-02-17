@@ -187,10 +187,31 @@ main > input:checked + section label ~ article p {
 
 @media(max-width: 767px) {
   main > section article {
-    top: calc(var(--nth-child) * var(--header-height)) !important;
+    top: calc((var(--nth-child) - 2) * var(--header-height) + 440px) !important;
     left: 0 !important;
     width: 100vw;
     border-right: 0px;
+  }
+  main > section {
+    width: 50vw !important;
+    height: 70px;
+  }
+  main > section header p,
+  main > section header blockquote  {
+    max-height: 0;
+    overflow: hidden;
+  }
+  main > input:checked + section header p,
+  main > input:checked + section header blockquote  {
+    max-height: unset;
+    overflow: visible;
+  }
+  main > input:checked + section {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    height: 230px;
+    width: 100vw !important;
+    order: 100;
   }
 }
 
