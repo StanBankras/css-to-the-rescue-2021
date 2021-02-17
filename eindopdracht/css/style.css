@@ -7,7 +7,7 @@
 }
 
 :root {
-  --primary-color: rgb(69, 143, 66);
+  --primary-color: #a50037;
   --secondary-color: rgb(255, 255, 255);
   --header-height: 230px;
 }
@@ -25,6 +25,9 @@
 
 body {
   background-color: var(--secondary-color);
+  max-width: 100vw;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 p {
@@ -59,18 +62,19 @@ body > header h1 {
 main {
   position: relative;
   display: flex;
-  height: 100vh;
-  flex-basis: auto;
+  width: 100vw;
+  flex-wrap: wrap;
 }
 
 /* Folding menu */
 
 main > section {
-  width: 100%;
+  width: calc(100vw / 7);
   height: var(--header-height);
 }
 
 main > section header {
+  --border-width: 1rem;
   width: 100%;
   height: 100%;
   background-color: var(--secondary-color);
@@ -79,7 +83,7 @@ main > section header {
   cursor: pointer;
   padding: 2rem;
   transition: background-color .3s;
-  border-bottom: 1rem solid var(--primary-color);
+  border-bottom: var(--border-width) solid var(--primary-color);
 }
 
 header h2 {
@@ -94,6 +98,7 @@ main > input:checked + section label header {
 }
 
 main > section article {
+  --border-width: 1rem;
   width: 50%;
   height: var(--header-height);
   backface-visibility: hidden;
@@ -105,11 +110,15 @@ main > section article {
   opacity: 0;
   z-index: 10;
   left: 0;
+  border-right: var(--border-width) solid var(--primary-color);
+  border-bottom: var(--border-width) solid var(--primary-color);
 }
 
 main > section article:nth-child(2n + 1) {
   left: 50%;
   top: calc((var(--nth-child) / 2) * var(--header-height) - var(--header-height) / 2);
+  border: 0px;
+  border-bottom: var(--border-width) solid var(--primary-color);
 }
 
 input[type=radio] {
@@ -124,7 +133,8 @@ main > input:checked + section label ~ article {
   color: var(--primary-color);
   backface-visibility: hidden;
   transform: rotateY(0);
-  transition-delay: calc((var(--nth-child)) * .1s);
+  transition-delay: calc((var(--nth-child)) * .03s);
+  cursor: grabbing;
 }
 
 /* https://stackoverflow.com/questions/28110057/using-css-nth-child-to-select-irregular-pattern-in-sequence */
@@ -149,8 +159,23 @@ main > input:checked + section label ~ article p {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: black;
-    --secondary-color: rgb(146, 146, 146);
+    --primary-color: #140007;
+    --secondary-color: #a50037;
+  }
+}
+
+@media(max-width: 1630px) {
+  main > section {
+    width: 25vw;
+  }
+  main > section:nth-of-type(n + 5) {
+    width: calc(100vw / 3);
+  }
+  main > section article {
+    top: calc((var(--nth-child) / 2) * var(--header-height) + var(--header-height));
+  }
+  main > section article:nth-child(2n + 1) {
+    top: calc((var(--nth-child) / 2) * var(--header-height) - var(--header-height) / 2 + var(--header-height));
   }
 }
 
