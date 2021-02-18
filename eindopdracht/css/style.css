@@ -8,6 +8,7 @@
 
 :root {
   --primary-color: #a50037;
+  --primary-color-lighten: #cc0749;
   --secondary-color: rgb(255, 255, 255);
   --header-height: 230px;
 }
@@ -47,9 +48,15 @@ body > header {
   flex-direction: column;
   align-items: center;
   padding: 4em;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color);  
   color: var(--secondary-color);
-  font-weight: bold;
+  background-image:
+    conic-gradient(
+      var(--primary-color),
+      var(--primary-color-lighten) 20%
+    );
+  background-size: 2em 2em;
+  background-position: center center;
 }
 
 body > header h1 {
@@ -64,6 +71,12 @@ main {
   display: flex;
   width: 100vw;
   flex-wrap: wrap;
+  background-image:
+    linear-gradient(
+      transparent,
+      transparent 60%,
+      var(--primary-color-lighten) 100%
+    );
 }
 
 /* Folding menu */
@@ -77,14 +90,12 @@ main > section header {
   --border-width: 1rem;
   width: 100%;
   height: 100%;
-  background-color: var(--secondary-color);
   color: var(--primary-color);
   transform-style: preserve-3d;
   cursor: pointer;
   padding: 2rem;
-  transition: background-color .3s;
+  transition: .3s;
   border-bottom: var(--border-width) solid var(--primary-color);
-  box-shadow: inset 0.3em 0.3em 0.9em var(--primary-color);
 }
 
 header h2 {
@@ -95,7 +106,20 @@ header h2 {
 main > section header:hover,
 main > input:checked + section label header {
   background-color: var(--primary-color);
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      var(--primary-color),
+      var(--primary-color-lighten) 50%,
+      transparent 50% 100%
+    );
+  background-size: 5em 5em;
+  background-position: center center;
   color: var(--secondary-color);
+}
+
+main > section:nth-of-type(4) header {
+  background-size: 5em 7em !important;
 }
 
 main > section article {
