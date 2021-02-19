@@ -1,4 +1,4 @@
-/* Disable most default styling */
+/* Standaard styling erafhalen */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -6,13 +6,15 @@
   list-style: none;
 }
 
+/* Definieer globale variabelen */
 :root {
-  --primary-color: #a50037;
-  --primary-color-lighten: #cc0749;
+  --primary-color: #0071a5;
+  --primary-color-lighten: #0087c5;
   --secondary-color: rgb(255, 255, 255);
   --header-height: 230px;
 }
 
+/* nth-child variabele zodat ik hier mee kan rekenen */
 :nth-child(1) { --nth-child: 1 }
 :nth-child(2) { --nth-child: 2 }
 :nth-child(3) { --nth-child: 3 }
@@ -24,11 +26,21 @@
 :nth-child(9) { --nth-child: 9 }
 :nth-child(10) { --nth-child: 10 }
 
+/*
+
+  START: Styling standaard elementen
+
+*/
+
 body {
   background-color: var(--secondary-color);
   max-width: 100vw;
   overflow: hidden;
   overflow-y: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quattrocento', serif;
 }
 
 p {
@@ -37,11 +49,37 @@ p {
   font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Quattrocento', serif;
+main {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  /* Gradient zorgt voor de schaduw over de categorieën */
+  background-image:
+    linear-gradient(
+      transparent,
+      transparent 60%,
+      var(--primary-color-lighten) 100%
+    );
 }
 
-/* Main header */
+input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+}
+
+/*
+
+  END: Styling standaard elementen
+
+*/
+
+/*
+
+  START: Headerstyling 'Russ & Daughters'
+
+*/
 
 body > header {
   display: flex;
@@ -64,22 +102,17 @@ body > header h1 {
   margin-bottom: 1rem;
 }
 
-/* Main header */
+/*
 
-main {
-  position: relative;
-  display: flex;
-  width: 100vw;
-  flex-wrap: wrap;
-  background-image:
-    linear-gradient(
-      transparent,
-      transparent 60%,
-      var(--primary-color-lighten) 100%
-    );
-}
+  END: Headerstyling 'Russ & Daughters'
 
-/* Folding menu */
+*/
+
+/*
+
+  START: Menu categorieën: Noshes, Boards, Platters, Eggs, Soup, Salads & Sweet
+
+*/
 
 main > section {
   width: calc(100vw / 7);
@@ -109,7 +142,7 @@ main > input:checked + section label header {
   background-image:
     radial-gradient(
       ellipse at center,
-      var(--primary-color),
+      var(--primary-color-lighten),
       var(--primary-color-lighten) 50%,
       transparent 50% 100%
     );
@@ -119,8 +152,20 @@ main > input:checked + section label header {
 }
 
 main > section:nth-of-type(4) header {
-  background-size: 5em 7em !important;
+  background-size: 5em 7em;
 }
+
+/*
+
+  END: Menu categorieën: Noshes, Boards, Platters, Eggs, Soup, Salads & Sweet
+
+*/
+
+/*
+
+  START: Styling items per categorie
+
+*/
 
 main > section article {
   --border-width: 1rem;
@@ -146,11 +191,19 @@ main > section article:nth-child(2n + 1) {
   border-bottom: var(--border-width) solid var(--primary-color);
 }
 
-input[type=radio] {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-}
+/*
+
+  END: Styling items per categorie
+
+*/
+
+/*
+
+  START: Menu items die nu geselecteerd staan
+  * Items staan absoluut gepositioneerd
+  * Input (radio) zorgt ervoor dat de juiste items weergeven worden (opacity)
+
+*/
 
 main > input:checked + section label ~ article {
   opacity: 1;
@@ -185,22 +238,40 @@ main > input:checked + section label ~ article p {
   max-width: 40rem;
 }
 
-/* Folding menu */
+/*
 
+  END: Menu items die nu geselecteerd staan
+  * Items staan absoluut gepositioneerd
+  * Input (radio) zorgt ervoor dat de juiste items weergeven worden (opacity)
+
+*/
+
+/* Media query die ervoor zorgt dat het scherm zich aanpast aan systeeminstellingen: dark/light mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #140007;
-    --secondary-color: #a50037;
+    --primary-color: #141414;
+    --primary-color-lighten: #202020;
+    --secondary-color: rgb(109, 109, 109);
   }
 }
+
+/*
+
+  START: Menu breakpoints / responsiveness
+
+*/
 
 @media(max-width: 1630px) {
   main > section {
     width: 25vw;
   }
+
+  /*  Zorg ervoor dat de laatste 3 items samen 100vw innemen */
   main > section:nth-of-type(n + 5) {
     width: calc(100vw / 3);
   }
+
+  /* Alle menu items 1 tikje omlaag omdat de categorieën dat ook zijn gegaan */
   main > section article {
     top: calc((var(--nth-child) / 2) * var(--header-height) + var(--header-height));
   }
@@ -210,21 +281,23 @@ main > input:checked + section label ~ article p {
 }
 
 @media(max-width: 767px) {
-  main > section article {
-    top: calc((var(--nth-child) - 2) * var(--header-height) + 440px) !important;
-    left: 0 !important;
-    width: 100vw;
-    border-right: 0px;
-  }
+  /* Layout van categorieën wordt hier helemaal aangepast, steeds 2 op 1 rij */
   main > section {
     width: 50vw !important;
     height: 70px;
   }
+
+  /* 
+    Extra content naast de categorienaam wordt verborgen,
+    niet display:none want dan is het niet meer leesbaar voor screenreaders
+  */
   main > section header p,
   main > section header blockquote  {
     max-height: 0;
     overflow: hidden;
   }
+
+  /* Het actieve item wordt compleet zichtbaar en komt onderaan te staan */
   main > input:checked + section header p,
   main > input:checked + section header blockquote  {
     max-height: unset;
@@ -237,7 +310,21 @@ main > input:checked + section label ~ article p {
     width: 100vw !important;
     order: 100;
   }
+
+  /* Alle menu items omlaag omdat het menu hoger wordt */
+  main > section article {
+    top: calc((var(--nth-child) - 2) * var(--header-height) + 440px) !important;
+    left: 0 !important;
+    width: 100vw;
+    border-right: 0px;
+  }
 }
+
+/*
+
+  END: Menu breakpoints / responsiveness
+
+*/
 
 /*
 *
