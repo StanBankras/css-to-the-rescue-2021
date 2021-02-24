@@ -10,21 +10,22 @@
 :root {
   --primary-color: #0071a5;
   --primary-color-lighten: #0087c5;
+  --primary-color-lighten-2: #c1ebff;
   --secondary-color: rgb(255, 255, 255);
   --header-height: 230px;
 }
 
-/* nth-child variabele zodat ik hier mee kan rekenen */
-:nth-child(1) { --nth-child: 1 }
-:nth-child(2) { --nth-child: 2 }
-:nth-child(3) { --nth-child: 3 }
-:nth-child(4) { --nth-child: 4 }
-:nth-child(5) { --nth-child: 5 }
-:nth-child(6) { --nth-child: 6 }
-:nth-child(7) { --nth-child: 7 }
-:nth-child(8) { --nth-child: 8 }
-:nth-child(9) { --nth-child: 9 }
-:nth-child(10) { --nth-child: 10 }
+/* nth-of-type variabele zodat ik hier mee kan rekenen */
+:nth-of-type(1) { --nth-of-type: 1 }
+:nth-of-type(2) { --nth-of-type: 2 }
+:nth-of-type(3) { --nth-of-type: 3 }
+:nth-of-type(4) { --nth-of-type: 4 }
+:nth-of-type(5) { --nth-of-type: 5 }
+:nth-of-type(6) { --nth-of-type: 6 }
+:nth-of-type(7) { --nth-of-type: 7 }
+:nth-of-type(8) { --nth-of-type: 8 }
+:nth-of-type(9) { --nth-of-type: 9 }
+:nth-of-type(10) { --nth-of-type: 10 }
 
 /*
 
@@ -119,6 +120,16 @@ main > section {
   height: var(--header-height);
 }
 
+/* De even sections krijgen een andere kleur */
+main > section:nth-of-type(2) article,
+main > section:nth-of-type(2) header,
+main > section:nth-of-type(4) article,
+main > section:nth-of-type(4) header,
+main > section:nth-of-type(6) article,
+main > section:nth-of-type(6) header {
+  filter: hue-rotate(60deg);
+}
+
 main > section header {
   --border-width: 1rem;
   width: 100%;
@@ -136,6 +147,7 @@ header h2 {
   text-transform: capitalize;
 }
 
+/* Header achtergronden */
 main > section header:hover,
 main > input:checked + section label header {
   background-color: var(--primary-color);
@@ -151,8 +163,72 @@ main > input:checked + section label header {
   color: var(--secondary-color);
 }
 
-main > section:nth-of-type(4) header {
-  background-size: 5em 7em;
+main > section:nth-of-type(4) label header {
+  background-size: 5em 7em !important;
+}
+
+/* Noshes categorie */
+main > section:nth-of-type(1) header:hover,
+main > input:checked + section:nth-of-type(1) label header {
+  background-size: 3em 3em !important;
+}
+
+/* Soup categorie */
+main > section:nth-of-type(5) header:hover,
+main > input:checked + section:nth-of-type(5) label header {
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      var(--primary-color-lighten),
+      var(--primary-color-lighten) 50%,
+      transparent 50% 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      var(--primary-color-lighten),
+      var(--primary-color-lighten) 50%,
+      transparent 50% 100%
+    ),
+    linear-gradient(
+      var(--primary-color-lighten),
+      var(--primary-color-lighten) 50%,
+      transparent 50% 100%
+    );
+  background-size: 15rem 15rem, 3rem 5rem, 0.5rem 16rem;
+  background-position: -30% center, 90% 10%, 83.9% -100%;
+  background-repeat: no-repeat;
+}
+
+/* Sweet categorie */
+main > section:nth-of-type(7) header:hover,
+main > input:checked + section:nth-of-type(7) label header {
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      var(--primary-color-lighten),
+      var(--primary-color-lighten) 50%,
+      transparent 50% 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      var(--primary-color-lighten),
+      var(--primary-color-lighten) 50%,
+      transparent 50% 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      var(--primary-color-lighten),
+      var(--primary-color-lighten) 50%,
+      transparent 50% 100%
+    ),
+    linear-gradient(
+      var(--primary-color-lighten),
+      var(--primary-color-lighten) 50%,
+      transparent 50% 100%    
+    );
+  background-size: 30% 30%, 30% 30%, 30% 30%, 25% 70%;
+  background-position: 40% 30%, 60% 30%, 50% 10%, 50% 130%;
+  background-repeat: no-repeat;
 }
 
 /*
@@ -176,7 +252,7 @@ main > section article {
   transition: .5s;
   padding: 2rem;
   position: absolute;
-  top: calc((var(--nth-child) / 2) * var(--header-height));
+  top: calc((var(--nth-of-type) / 2) * var(--header-height) + var(--header-height) / 2);
   opacity: 0;
   z-index: 10;
   left: 0;
@@ -184,9 +260,9 @@ main > section article {
   border-bottom: var(--border-width) solid var(--primary-color);
 }
 
-main > section article:nth-child(2n + 1) {
+main > section article:nth-of-type(2n) {
   left: 50%;
-  top: calc((var(--nth-child) / 2) * var(--header-height) - var(--header-height) / 2);
+  top: calc((var(--nth-of-type) / 2) * var(--header-height));
   border: 0px;
   border-bottom: var(--border-width) solid var(--primary-color);
 }
@@ -211,14 +287,14 @@ main > input:checked + section label ~ article {
   color: var(--primary-color);
   backface-visibility: hidden;
   transform: rotateY(0);
-  transition-delay: calc((var(--nth-child)) * .03s);
+  transition-delay: calc((var(--nth-of-type)) * .03s);
   cursor: grabbing;
 }
 
 /* https://stackoverflow.com/questions/28110057/using-css-nth-child-to-select-irregular-pattern-in-sequence */
-main > input:checked + section label ~ article:nth-of-type(4n),
-main > input:checked + section label ~ article:nth-of-type(4n + 1) {
-  background-color: var(--secondary-color);
+main > input:checked + section label ~ article:nth-of-type(4n + 1),
+main > input:checked + section label ~ article:nth-of-type(4n) {
+  background-color: var(--primary-color-lighten-2);
   color: var(--primary-color);
 }
 
@@ -246,11 +322,13 @@ main > input:checked + section label ~ article p {
 
 */
 
+
 /* Media query die ervoor zorgt dat het scherm zich aanpast aan systeeminstellingen: dark/light mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: #141414;
     --primary-color-lighten: #202020;
+    --primary-color-lighten-2: #333333;
     --secondary-color: rgb(109, 109, 109);
   }
 }
@@ -273,10 +351,10 @@ main > input:checked + section label ~ article p {
 
   /* Alle menu items 1 tikje omlaag omdat de categorieën dat ook zijn gegaan */
   main > section article {
-    top: calc((var(--nth-child) / 2) * var(--header-height) + var(--header-height));
+    top: calc((var(--nth-of-type) / 2) * var(--header-height) + var(--header-height) * 1.5);
   }
-  main > section article:nth-child(2n + 1) {
-    top: calc((var(--nth-child) / 2) * var(--header-height) - var(--header-height) / 2 + var(--header-height));
+  main > section article:nth-of-type(2n) {
+    top: calc((var(--nth-of-type) / 2) * var(--header-height) + var(--header-height));
   }
 }
 
@@ -313,7 +391,7 @@ main > input:checked + section label ~ article p {
 
   /* Alle menu items omlaag omdat het menu hoger wordt */
   main > section article {
-    top: calc((var(--nth-child) - 2) * var(--header-height) + 440px) !important;
+    top: calc((var(--nth-of-type) - 2) * var(--header-height) + var(--header-height) * 3) !important;
     left: 0 !important;
     width: 100vw;
     border-right: 0px;
