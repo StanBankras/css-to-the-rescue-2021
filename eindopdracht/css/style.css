@@ -260,6 +260,22 @@ main > section article {
   border-bottom: var(--border-width) solid var(--primary-color);
 }
 
+main > section article div {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--primary-color-lighten-2);
+  display: inline-block;
+}
+
+main > section article div::before {
+  content: '€'
+}
+
+main > section article div::after {
+  content: ',-'
+}
+
 main > section article:nth-of-type(2n) {
   left: 50%;
   top: calc((var(--nth-of-type) / 2) * var(--header-height));
