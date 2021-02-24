@@ -124,3 +124,19 @@ De '+' en '~' selector had ik hiervoor nog nooit gebruikt, dus ik vond het wel f
 * Ik wil graag de kleuren aanpassen zodat ik aan de 'twee kleuren' eis voldoe
 * Ik wil het menu responsive gaan maken
 * Ik wil met overige tijd vormpjes / animaties maken per menu om het op te vrolijken
+
+## :black_medium_square: Week 3
+In week 3 heb ik veel gedaan om de uitstraling van de website aan te pakken. Ik moet zeggen dat ik er nog steeds niet heel erg tevreden over ben, maar wel met de nieuwe technieken die ik heb gebruikt om het zo ver te krijgen.
+
+### Background-image
+Tijdens de themasessie over gradients, heb ik ontdekt hoeveel er mogelijk is met background-images. Deze heb ik gebruik deze week om onder andere vormpjes in de categorieën te krijgen, zoals:
+
+![Soup](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/soup.png?raw=true)
+
+### Responsive
+Ook heb ik de absoluut gepositioneerde elementen responsive gemaakt. Dit was wel een rekenwerkje, maar door gebruik te maken van variables viel dat best wel mee:
+
+![Responsive site](https://github.com/StanBankras/css-to-the-rescue-2021/blob/master/images/responsive.gif?raw=true)
+
+### Filters
+Ik heb hiervoor ook niet met filters gewerkt. Bij de eis van maximaal twee kleuren, komen deze goed van pas om toch andere kleuren erin te krijgen.
