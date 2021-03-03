@@ -191,13 +191,14 @@ main > input:checked + section:nth-of-type(5) label header {
       transparent 50% 100%
     );
   background-size: 15rem 15rem, 3rem 5rem, 0.5rem 16rem;
-  background-position: -30% center, 90% 10%, 83.9% -100%;
+  background-position: -0.5rem center, 12.5rem 10%, 13.8rem -100%;
   background-repeat: no-repeat;
 }
 
 /* Sweet categorie */
 main > section:nth-of-type(7) header:hover,
 main > input:checked + section:nth-of-type(7) label header {
+  --circle-size: 6rem;
   background-image:
     radial-gradient(
       ellipse at center,
@@ -222,8 +223,16 @@ main > input:checked + section:nth-of-type(7) label header {
       var(--primary-color-lighten) 50%,
       transparent 50% 100%    
     );
-  background-size: 30% 30%, 30% 30%, 30% 30%, 25% 70%;
-  background-position: 40% 30%, 60% 30%, 50% 10%, 50% 130%;
+  background-size: 
+    var(--circle-size) var(--circle-size),
+    var(--circle-size) var(--circle-size),
+    var(--circle-size) var(--circle-size),
+    calc(var(--circle-size) / 5 * 4) calc(var(--circle-size) / 5 * 8);
+  background-position: 
+    calc(var(--circle-size) / 5 * 3) calc(var(--circle-size) / 5 * 3),
+    calc(var(--circle-size) / 5 * 6) calc(var(--circle-size) / 5 * 3),
+    calc(var(--circle-size) / 5 * 4.5) calc(var(--circle-size) / 5),
+    calc(var(--circle-size) / 5 * 5) calc(var(--circle-size) / 5 * 6);
   background-repeat: no-repeat;
 }
 
@@ -342,6 +351,13 @@ main > input:checked + section label ~ article p {
     --primary-color-lighten: #202020;
     --primary-color-lighten-2: #8b8b8b;
     --secondary-color: rgb(170, 170, 170);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  main > section article,
+  main > section header {
+    transition: 0s !important;
   }
 }
 
