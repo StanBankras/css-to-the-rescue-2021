@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  line-height: 1.5em;
+  word-spacing: 0.16em;
 }
 
 /* Definieer globale variabelen */
@@ -88,7 +90,7 @@ body > header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4em;
+  padding: 2em;
   background-color: var(--primary-color);  
   color: var(--secondary-color);
   background-image:
@@ -135,13 +137,13 @@ main > section header {
   color: var(--primary-color);
   transform-style: preserve-3d;
   cursor: pointer;
-  padding: 2rem;
+  padding: 1.5rem;
   transition: .3s;
   border-bottom: var(--border-width) solid var(--primary-color);
 }
 
 header h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-transform: capitalize;
 }
 
@@ -359,6 +361,15 @@ main > input:checked + section label ~ article p {
   main > section article,
   main > section header {
     transition: 0s !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: red;
+    --primary-color-lighten: Highlight;
+    --primary-color-lighten-2: Highlight;
+    --secondary-color: rgb(255, 255, 255);
   }
 }
 

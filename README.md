@@ -140,3 +140,18 @@ Ook heb ik de absoluut gepositioneerde elementen responsive gemaakt. Dit was wel
 
 ### Filters
 Ik heb hiervoor ook niet met filters gewerkt. Bij de eis van maximaal twee kleuren, komen deze goed van pas om toch andere kleuren erin te krijgen.
+
+## Accessibility: WACG
+De web content accessibility guidelines ([WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)) is een protocol met veel verschillende eisen op verschillende niveaus. Voor dit project richt ik met op het 'intermediate level': AA. Hierin zitten alle eisen van A en extra eisen. 
+
+Ik heb deze eisen vooral bekeken vanuit het CSS perspectief. Dit zijn onderdelen die ik goed heb bekeken en opgenomen in mijn site:
+- Line height at least 1.5x font size
+- Reflow: responsive up to 320px
+- Contrast (minimum) 4.5:1 for text
+- All functionality should be available via keyboard
+- Pause, Stop, Hide: nothing should move or appear automatically
+- Focus visible
+- Word spacing at least 0.16x font size
+- Content should be visible even when scaled to 200%
+
+Daarnaast heb ik ook reduced motion preferences afgevangen met een media query daarvoor. Animations worden hierdoor niet gedaan, maar de content wordt gelijk getoont.
