@@ -121,12 +121,8 @@ main > section {
 }
 
 /* De even sections krijgen een andere kleur */
-main > section:nth-of-type(2) article,
-main > section:nth-of-type(2) header,
-main > section:nth-of-type(4) article,
-main > section:nth-of-type(4) header,
-main > section:nth-of-type(6) article,
-main > section:nth-of-type(6) header {
+main > section:nth-of-type(2n) article,
+main > section:nth-of-type(2n) header {
   filter: hue-rotate(60deg);
 }
 
@@ -344,8 +340,8 @@ main > input:checked + section label ~ article p {
   :root {
     --primary-color: #141414;
     --primary-color-lighten: #202020;
-    --primary-color-lighten-2: #333333;
-    --secondary-color: rgb(109, 109, 109);
+    --primary-color-lighten-2: #8b8b8b;
+    --secondary-color: rgb(170, 170, 170);
   }
 }
 
