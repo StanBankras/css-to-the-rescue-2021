@@ -10,7 +10,7 @@
 :root {
   --primary-color: #0071a5;
   --primary-color-lighten: #0087c5;
-  --primary-color-lighten-2: #c1ebff;
+  --primary-color-lighten-2: #e1f5ff;
   --secondary-color: rgb(255, 255, 255);
   --header-height: 230px;
 }
@@ -61,7 +61,7 @@ main {
   background-image:
     linear-gradient(
       transparent,
-      transparent 60%,
+      transparent 80%,
       var(--primary-color-lighten) 100%
     );
 }
@@ -311,7 +311,6 @@ main > input:checked + section label ~ article {
   backface-visibility: hidden;
   transform: rotateY(0);
   transition-delay: calc((var(--nth-of-type)) * .03s);
-  cursor: grabbing;
 }
 
 /* https://stackoverflow.com/questions/28110057/using-css-nth-child-to-select-irregular-pattern-in-sequence */
